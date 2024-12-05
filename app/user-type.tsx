@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import * as SplashScreen from 'expo-splash-screen';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from '@expo/vector-icons/FontAwesome';
 import { useRouter } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
@@ -27,15 +27,15 @@ const UserTypeScreen = () => {
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.title}>Select User Type</Text>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('./user-type/delivery')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/user-type/delivery')}>
           <Icon name="car" size={30} color="#3b5998" />
           <Text style={styles.buttonText}>Delivery</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('./user-type/business')}>
-          <Icon name="store" size={30} color="#3b5998" />
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/user-type/business')}>
+          <Icon name="briefcase" size={30} color="#3b5998" />
           <Text style={styles.buttonText}>Business</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('./user-type/shopper')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/user-type/shopper')}>
           <Icon name="shopping-bag" size={30} color="#3b5998" />
           <Text style={styles.buttonText}>Shopper</Text>
         </TouchableOpacity>
