@@ -7,8 +7,10 @@ const DeliveryScreen = () => {
       <Text style={styles.text}>Delivery Screen</Text>
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
-      <Button title="Login" onPress={() => alert('Login')} />
-      <Button title="Register" onPress={() => alert('Register')} />
+      <View style={styles.buttonContainer}>
+        <Button title="Login" onPress={() => alert('Login')} />
+        <Button title="Register" onPress={() => alert('Register')} />
+      </View>
     </View>
   );
 };
@@ -32,6 +34,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
+  },
+  buttonContainer: {
+    marginTop: 20,
+    width: '80%',
   },
 });
 
