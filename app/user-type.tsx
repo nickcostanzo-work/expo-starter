@@ -2,12 +2,10 @@ import React, { useCallback } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import * as SplashScreen from 'expo-splash-screen';
-import { useRouter } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
-const HomeScreen = () => {
-  const router = useRouter();
+const UserTypeScreen = () => {
   let [fontsLoaded] = useFonts({
     PressStart2P_400Regular,
   });
@@ -24,13 +22,11 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={styles.title}>Crier</Text>
+      <Text style={styles.title}>Select User Type</Text>
       <View style={styles.buttonContainer}>
-        <Button
-          title="Discover your local ecosystem"
-          onPress={() => router.push('/user-type')}
-          color="#3b5998"
-        />
+        <Button title="Delivery" onPress={() => alert('Delivery selected')} color="#3b5998" />
+        <Button title="Business" onPress={() => alert('Business selected')} color="#3b5998" />
+        <Button title="Shopper" onPress={() => alert('Shopper selected')} color="#3b5998" />
       </View>
     </View>
   );
@@ -51,7 +47,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 20,
+    width: '80%',
+  },
+  button: {
+    marginVertical: 10,
   },
 });
 
-export default HomeScreen;
+export default UserTypeScreen;
