@@ -21,7 +21,8 @@ const ShopperScreen = () => {
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
       <View style={styles.buttonContainer}>
         <Button title="Login" onPress={() => alert('Login')} />
-        <Button title="Register" onPress={() => alert('Register')} />
+        <Button title="Register" 
+         />
       </View>
     </View>
   );

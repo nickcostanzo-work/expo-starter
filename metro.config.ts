@@ -10,5 +10,6 @@ export default {
   },
   resolver: {
     sourceExts: ['ts', 'tsx', 'js', 'jsx', 'json'],
-  },
+  }
+  
 };
