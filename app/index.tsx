@@ -28,7 +28,7 @@ const HomeScreen = () => {
       <View style={styles.buttonContainer}>
         <Button
           title="Discover your local ecosystem"
-          onPress={() => router.push('/user-type')}
+          onPress={() => router.push('/user-type/shopper')}
           color="#3b5998"
         />
       </View>

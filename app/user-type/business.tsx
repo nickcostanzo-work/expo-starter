@@ -1,9 +1,14 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
+import { Link } from 'expo-router';
+import Icon from '@expo/vector-icons/FontAwesome';
 
 const BusinessScreen = () => {
   return (
     <View style={styles.container}>
+      <Link href="/" style={styles.backButton}>
+        <Icon name="arrow-left" size={24} color="#000" />
+      </Link>
       <Text style={styles.text}>Business Screen</Text>
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
@@ -21,6 +26,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
+  },
+  backButton: {
+    position: 'absolute',
+    top: 40,
+    left: 20,
   },
   text: {
     fontSize: 24,
