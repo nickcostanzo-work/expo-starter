@@ -7,6 +7,7 @@ import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-star
 import * as SplashScreen from 'expo-splash-screen';
 import { useRouter } from 'expo-router';
 import useUserStore from '../stores/userTypeStore'; // Import the Zustand store
+import { TamaguiProvider, View as RNTamaguiView } from 'tamagui'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,9 +29,9 @@ const HomeScreen = () => {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
+    <RNTamaguiView style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.title}>Crier</Text>
-      <View style={styles.buttonContainer}>
+      <RNTamaguiView style={styles.buttonContainer}>
         <Button
           title="Discover your local ecosystem"
           onPress={() => {
@@ -39,8 +40,8 @@ const HomeScreen = () => {
           }}
           color="#3b5998"
         />
-      </View>
-    </View>
+      </RNTamaguiView>
+    </RNTamaguiView>
   );
 };
 
