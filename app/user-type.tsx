@@ -1,11 +1,14 @@
 import React, { useCallback } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import * as SplashScreen from 'expo-splash-screen';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { useRouter } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
 const UserTypeScreen = () => {
+  const router = useRouter();
   let [fontsLoaded] = useFonts({
     PressStart2P_400Regular,
   });
@@ -24,9 +27,18 @@ const UserTypeScreen = () => {
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.title}>Select User Type</Text>
       <View style={styles.buttonContainer}>
-        <Button title="Delivery" onPress={() => alert('Delivery selected')} color="#3b5998" />
-        <Button title="Business" onPress={() => alert('Business selected')} color="#3b5998" />
-        <Button title="Shopper" onPress={() => alert('Shopper selected')} color="#3b5998" />
+        <TouchableOpacity style={styles.button} onPress={() => router.push('./user-type/delivery')}>
+          <Icon name="car" size={30} color="#3b5998" />
+          <Text style={styles.buttonText}>Delivery</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('./user-type/business')}>
+          <Icon name="store" size={30} color="#3b5998" />
+          <Text style={styles.buttonText}>Business</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('./user-type/shopper')}>
+          <Icon name="shopping-bag" size={30} color="#3b5998" />
+          <Text style={styles.buttonText}>Shopper</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -48,9 +60,18 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 20,
     width: '80%',
+    alignItems: 'center',
   },
   button: {
+    flexDirection: 'column',
+    alignItems: 'center',
     marginVertical: 10,
+  },
+  buttonText: {
+    fontFamily: 'PressStart2P_400Regular',
+    fontSize: 18,
+    color: '#3b5998',
+    marginTop: 5,
   },
 });
 
