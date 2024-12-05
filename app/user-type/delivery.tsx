@@ -5,21 +5,17 @@ import Icon from '@expo/vector-icons/FontAwesome';
 import useUserStore from '../stores/useUserStore'; // Import the Zustand store
 
 const DeliveryScreen = () => {
-  const { userType, setUserType } = useUserStore((state) => ({
-    userType: state.userType,
-    setUserType: state.setUserType,
-  })); // Get the userType and setUserType function from the store
-
+  const { userType, setUserType } = useUserStore();
   useEffect(() => {
-    setUserType('Delivery'); // Set user type to 'delivery' when the component mounts
-  }, []);
+    setUserType('Delivery'); // Set user type to 'Delivery' when the component mounts
+  }, [setUserType]);
 
   return (
     <View style={styles.container}>
       <Link href="/" style={styles.backButton}>
         <Icon name="arrow-left" size={24} color="#000" />
       </Link>
-      <Text style={styles.text}>{userType} Delivery Screen</Text>
+      <Text style={styles.text}>{userType} Screen</Text>
       <TextInput style={styles.input} placeholder="Email" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
       <View style={styles.buttonContainer}>

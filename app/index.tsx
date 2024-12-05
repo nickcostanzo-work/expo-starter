@@ -12,10 +12,7 @@ SplashScreen.preventAutoHideAsync();
 
 const HomeScreen = () => {
   const router = useRouter();
-  const { userType, setUserType } = useUserStore((state) => ({
-    userType: state.userType,
-    setUserType: state.setUserType,
-  })); 
+  const { userType, setUserType } = useUserStore();
   let [fontsLoaded] = useFonts({
     PressStart2P_400Regular,
   });
@@ -33,7 +30,6 @@ const HomeScreen = () => {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.title}>Crier</Text>
-      <Text style={styles.userType}>Current User Type: {userType}</Text>
       <View style={styles.buttonContainer}>
         <Button
           title="Discover your local ecosystem"
