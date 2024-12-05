@@ -1,13 +1,21 @@
+// set user type to 'shopper' by default on navigation
+// persist usertype into the next page
+
 import React, { useCallback } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import * as SplashScreen from 'expo-splash-screen';
 import { useRouter } from 'expo-router';
+import useUserStore from './stores/useUserStore'; // Import the Zustand store
 
 SplashScreen.preventAutoHideAsync();
 
 const HomeScreen = () => {
   const router = useRouter();
+  const { userType, setUserType } = useUserStore((state) => ({
+    userType: state.userType,
+    setUserType: state.setUserType,
+  })); 
   let [fontsLoaded] = useFonts({
     PressStart2P_400Regular,
   });
@@ -25,10 +33,14 @@ const HomeScreen = () => {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={styles.title}>Crier</Text>
+      <Text style={styles.userType}>Current User Type: {userType}</Text>
       <View style={styles.buttonContainer}>
         <Button
           title="Discover your local ecosystem"
-          onPress={() => router.push('/user-type/shopper')}
+          onPress={() => {
+            setUserType('Shopper');
+            router.push('/user-type/shopper');
+          }}
           color="#3b5998"
         />
       </View>
@@ -47,6 +59,10 @@ const styles = StyleSheet.create({
     fontFamily: 'PressStart2P_400Regular',
     fontSize: 24,
     fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  userType: {
+    fontSize: 18,
     marginBottom: 20,
   },
   buttonContainer: {
