@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import { Link } from 'expo-router';
 import Icon from '@expo/vector-icons/FontAwesome';
-import useUserStore from '../stores/useUserStore'; // Import the Zustand store
+import useUserStore from '../../stores/userTypeStore'; // Import the Zustand store
 
 const ShopperScreen = () => {
   const { userType, setUserType } = useUserStore();

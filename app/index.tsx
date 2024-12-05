@@ -6,7 +6,7 @@ import { Text, View, StyleSheet, Button } from 'react-native';
 import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import * as SplashScreen from 'expo-splash-screen';
 import { useRouter } from 'expo-router';
-import useUserStore from './stores/useUserStore'; // Import the Zustand store
+import useUserStore from '../stores/userTypeStore'; // Import the Zustand store
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,7 +35,7 @@ const HomeScreen = () => {
           title="Discover your local ecosystem"
           onPress={() => {
             setUserType('Shopper');
-            router.push('/user-type/shopper');
+            router.push('./(UserTypeAuth)/Shopper');
           }}
           color="#3b5998"
         />

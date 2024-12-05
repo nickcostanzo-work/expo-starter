@@ -1,13 +1,27 @@
 import { Tabs } from 'expo-router';
 import Icon from '@expo/vector-icons/FontAwesome';
-import useUserStore from '../stores/useUserStore'; // Import the Zustand store
+import useUserStore from '../../stores/userTypeStore'; // Import the Zustand store
 
 const TabsLayout = () => {
   const { userType, setUserType } = useUserStore();
   return (
     <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
-        name="delivery"
+        name="Shopper"
+        options={{
+          title: 'Shopper',
+          tabBarIcon: ({ color, focused }) => (
+            <Icon name="shopping-cart" color={color} size={24} />
+          ),
+        }}
+        listeners={{
+          tabPress: () => {
+            setUserType('Shopper');
+          },
+        }}
+      />
+      <Tabs.Screen
+        name="Delivery"
         options={{
           title: 'Delivery',
           tabBarIcon: ({ color, focused }) => (
@@ -21,7 +35,7 @@ const TabsLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="business"
+        name="Business"
         options={{
           title: 'Business',
           tabBarIcon: ({ color, focused }) => (
@@ -34,20 +48,7 @@ const TabsLayout = () => {
           },
         }}
       />
-      <Tabs.Screen
-        name="shopper"
-        options={{
-          title: 'Shopper',
-          tabBarIcon: ({ color, focused }) => (
-            <Icon name="shopping-cart" color={color} size={24} />
-          ),
-        }}
-        listeners={{
-          tabPress: () => {
-            setUserType('Shopper');
-          },
-        }}
-      />
+
     </Tabs>
   );
 };

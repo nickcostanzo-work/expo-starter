@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import { Link } from 'expo-router';
 import Icon from '@expo/vector-icons/FontAwesome';
-import useUserStore from '../stores/useUserStore'; // Import the Zustand store
+import useUserStore from '../../stores/userTypeStore'; // Import the Zustand store
 
-const BusinessScreen = () => {
+const DeliveryScreen = () => {
   const { userType, setUserType } = useUserStore();
-
   useEffect(() => {
-    setUserType('Business'); // Set user type to 'Business' when the component mounts
+    setUserType('Delivery'); // Set user type to 'Delivery' when the component mounts
   }, [setUserType]);
 
   return (
@@ -62,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BusinessScreen;
+export default DeliveryScreen;

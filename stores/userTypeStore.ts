@@ -6,9 +6,9 @@ interface UserState {
   setUserType: (type: 'default' | 'Business' | 'Delivery' | 'Shopper') => void;
 }
 
-const useUserStore = create<UserState>((set) => ({
+const useUserTypeStore = create<UserState>((set) => ({
   userType: 'default',
   setUserType: (type: 'default' | 'Business' | 'Delivery' | 'Shopper') => set({ userType: type }),
 }));
 
-export default useUserStore;
+export default useUserTypeStore;
