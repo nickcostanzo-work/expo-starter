@@ -13,3 +13,21 @@ export default {
   }
   
 };
+
+
+
+// Tamagui configuration
+// https://tamagui.dev/docs/getting-started
+// add nice web support with optimizing compiler + CSS extraction
+const { withTamagui } = require('@tamagui/metro-plugin')
+module.exports = withTamagui(defaultConfig, {
+  components: ['tamagui'],
+  config: './tamagui.config.ts',
+  outputCSS: './tamagui-web.css',
+})
+
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname, {
+  // [Web-only]: Enables CSS support in Metro.
+  isCSSEnabled: true,
+})
