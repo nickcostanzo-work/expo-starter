@@ -25,18 +25,21 @@ export default {
       }
     },
     ios: {
-      supportsTablet: true
+      supportsTablet: true,
+      userInterfaceStyle: "automatic",
     },
     android: {
       adaptiveIcon: {
         foregroundImage: "./assets/images/adaptive-icon.png",
         backgroundColor: "#ffffff"
-      }
+      },
+      userInterfaceStyle: "automatic",
     },
     web: {
       bundler: "metro",
       output: "static",
-      favicon: "./assets/images/favicon.png"
+      favicon: "./assets/images/favicon.png",
+      userInterfaceStyle: "automatic",
     },
     plugins: [
       "expo-router",

@@ -16,19 +16,18 @@ const AuthForm: React.FC<AuthFormProps> = ({ userType, onLogin, onRegister, onGo
   const [password, setPassword] = useState('');
 
   return (
-    <YStack f={1} jc="center" ai="center" bg="white" p="$4">
+    <YStack f={1} jc="center" ai="center" p="$4">
       <Link href="/" style={{ position: 'absolute', top: 40, left: 20 }}>
-        <Icon name="arrow-left" size={24} color="#000" />
+        <Icon name="arrow-left" size={24} />
       </Link>
       <Text fontSize="$6" fontWeight="bold" mb="$5">
-        {userType} Screen
+        {userType!} Screen
       </Text>
       <Input
         w="80%"
         p="$2"
         my="$2"
         borderWidth={1}
-        borderColor="#ccc"
         borderRadius="$4"
         placeholder="Email"
         value={email}
@@ -39,7 +38,6 @@ const AuthForm: React.FC<AuthFormProps> = ({ userType, onLogin, onRegister, onGo
         p="$2"
         my="$2"
         borderWidth={1}
-        borderColor="#ccc"
         borderRadius="$4"
         placeholder="Password"
         secureTextEntry
@@ -53,11 +51,10 @@ const AuthForm: React.FC<AuthFormProps> = ({ userType, onLogin, onRegister, onGo
         <Button
           mt="$4"
           bg="#4285F4"
-          color="white"
           onPress={onGoogleAuth}
-          icon={<Icon name="google" size={20} color="white" />}
+          icon={<Icon name="google" size={20}/>}
         >
-          Sign in with Google
+          <Text>Sign in with Google</Text>   
         </Button>
       </YStack>
     </YStack>
