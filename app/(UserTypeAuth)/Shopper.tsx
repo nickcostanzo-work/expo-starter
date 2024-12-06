@@ -14,8 +14,12 @@ const ShopperScreen = () => {
     alert('Register');
   };
 
+  const handleGoogleAuth = () => { 
+    alert('Google Auth');
+  };
+
   return (
-    <AuthForm userType="Shopper" onLogin={handleLogin} onRegister={handleRegister} />
+    <AuthForm userType="Shopper" onLogin={handleLogin} onRegister={handleRegister} onGoogleAuth={handleGoogleAuth}/>
   );
 };
 

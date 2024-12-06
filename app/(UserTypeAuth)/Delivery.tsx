@@ -14,8 +14,12 @@ const DeliveryScreen = () => {
     alert('Register');
   };
 
+  const handleGoogleAuth = () => { 
+    alert('Google Auth');
+  };
+
   return (
-    <AuthForm userType="Delivery" onLogin={handleLogin} onRegister={handleRegister} />
+    <AuthForm userType="Delivery" onLogin={handleLogin} onRegister={handleRegister} onGoogleAuth={handleGoogleAuth}/>
   );
 };
 

@@ -14,8 +14,12 @@ const BusinessScreen = () => {
     alert('Register');
   };
 
+  const handleGoogleAuth = () => { 
+    alert('Google Auth');
+  };
+
   return (
-    <AuthForm userType="Business" onLogin={handleLogin} onRegister={handleRegister} />
+    <AuthForm userType="Business" onLogin={handleLogin} onRegister={handleRegister} onGoogleAuth={handleGoogleAuth}/>
   );
 };
 
