@@ -3,18 +3,20 @@
 This is an [Expo](https://expo.dev) project template. 
 
 It includes configuration for - 
--Tamagui  (styling)
--Google Fonts
--Firebase (firebase)
--Yarn Package Manager
--Typescript
+- Tamagui  (styling)
+- Google Fonts
+- Firebase (firebase)
+- Yarn Package Manager
+- Typescript
 
 
 ## Get started
 
-1. Clone this repo, download the source code, whatever you desire.  .gitignore is completely commented out, which leads to the next step.
-2. Uncomment all .gitignore files in .gitignore
-
+1. Clone this repo, download the source code, whatever you desire.
+2. Run `yarn install` to install the dependencies.
+3. Uncomment all .env related files in .gitignore
+4. Create a firebase project for your app, add a web app, and get your credentials. (no need to create andoird / ios apps, this is just for initial config)
+5. Run `yarn expo start -c` to start the app.
 
 In the output, you'll find options to open the app in a
 
@@ -23,9 +25,9 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+You can start developing by editing the files inside the **app** directory and **components** directories. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-
+Please feel free to reach out if you see any issues or need some help!
 
 ## Learn more
 
@@ -36,10 +38,3 @@ To learn more about developing your project with Expo, look at the following res
 - [Tamagui] (https://tamagui.dev/docs/intro/introduction): Following the steps of this documentation and using other references on the web.
 - [Firebase] (https://docs.expo.dev/guides/using-firebase)
 
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
