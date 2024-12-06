@@ -33,8 +33,8 @@ const HomeScreenContent = () => {
       <YStack mt="$5" w="100%" ai="center">
         <Button
           onPress={() => {
-            setUserType('Shopper');
-            router.push('./(UserTypeAuth)/Shopper');
+            setUserType('default');
+            alert("Good job, its working!!");
           }}
         >
           <Text textAlign="center" fontFamily="PressStart2P_400Regular" fontSize="$2">

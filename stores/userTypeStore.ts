@@ -2,13 +2,13 @@
 import { create } from 'zustand';
 
 interface UserState {
-  userType: 'default' | 'Business' | 'Delivery' | 'Shopper';
-  setUserType: (type: 'default' | 'Business' | 'Delivery' | 'Shopper') => void;
+  userType: 'default';
+  setUserType: (type: 'default' ) => void;
 }
 
 const useUserTypeStore = create<UserState>((set) => ({
   userType: 'default',
-  setUserType: (type: 'default' | 'Business' | 'Delivery' | 'Shopper') => set({ userType: type }),
+  setUserType: (type: 'default' ) => set({ userType: type }),
 }));
 
 export default useUserTypeStore; 
