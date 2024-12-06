@@ -11,4 +11,4 @@ const useUserTypeStore = create<UserState>((set) => ({
   setUserType: (type: 'default' | 'Business' | 'Delivery' | 'Shopper') => set({ userType: type }),
 }));
 
-export default useUserTypeStore;
+export default useUserTypeStore; 

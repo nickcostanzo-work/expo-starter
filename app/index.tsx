@@ -2,12 +2,11 @@
 // persist usertype into the next page
 
 import React, { useCallback } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
 import { useFonts, PressStart2P_400Regular } from '@expo-google-fonts/press-start-2p';
 import * as SplashScreen from 'expo-splash-screen';
 import { useRouter } from 'expo-router';
 import useUserStore from '../stores/userTypeStore'; // Import the Zustand store
-import { TamaguiProvider, View as RNTamaguiView } from 'tamagui'
+import { Button, Text, View, YStack } from 'tamagui';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -29,42 +28,31 @@ const HomeScreen = () => {
   }
 
   return (
-    <RNTamaguiView style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={styles.title}>Crier</Text>
-      <RNTamaguiView style={styles.buttonContainer}>
+    <YStack f={1} jc="center" ai="center" bg="white" p="$4" onLayout={onLayoutRootView}>
+      <Text fontFamily="PressStart2P_400Regular" fontSize="$10" mb="$5">
+        Crier
+      </Text>
+      <YStack mt="$5" w="100%" ai="center">
         <Button
-          title="Discover your local ecosystem"
+          backgroundColor="#3b5998"
+          paddingVertical="$0"
+          paddingHorizontal="$1"
+          borderRadius="$3"
+          width="80%"
+          height="30%"
           onPress={() => {
             setUserType('Shopper');
             router.push('./(UserTypeAuth)/Shopper');
           }}
-          color="#3b5998"
-        />
-      </RNTamaguiView>
-    </RNTamaguiView>
+        >
+          <Text color="white" textAlign="center" fontFamily="PressStart2P_400Regular" fontSize="$2">
+            Discover your local ecosystem
+          </Text>
+        </Button>
+      </YStack>
+    </YStack>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  title: {
-    fontFamily: 'PressStart2P_400Regular',
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  userType: {
-    fontSize: 18,
-    marginBottom: 20,
-  },
-  buttonContainer: {
-    marginTop: 20,
-  },
-});
 
 export default HomeScreen;

@@ -3,10 +3,11 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
-    "start": "ts-node metro.config.ts && expo start",
+    "start": "ts-node metro.config.ts && expo start -c",
+    "start-web": "expo start -c",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "yarn expo run:android",
+    "ios": "yarn expo run:ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint"
